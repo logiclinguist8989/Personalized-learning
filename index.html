@@ -37,9 +37,15 @@
   </style>
 </head>
 <body class="bg-gray-100">
-  <div class="flex">
-    <!-- Sidebar -->
-    <div class="sidebar">
+  <div class="flex min-h-screen">
+    <!-- Sidebar (responsive) -->
+    <input type="checkbox" id="sidebar-toggle" class="hidden peer" />
+    <label for="sidebar-toggle" class="fixed top-4 left-4 z-30 bg-white rounded-md shadow-md p-2 cursor-pointer md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </label>
+    <div class="sidebar fixed z-20 top-0 left-0 h-full w-64 bg-gray-100 shadow-md transform -translate-x-full peer-checked:translate-x-0 transition-transform duration-200 md:translate-x-0 md:static md:w-64">
       <div class="p-4">
         <h2 class="text-xl font-bold flex items-center">
           <span class="mr-2">🎓</span> LMS
@@ -47,23 +53,22 @@
       </div>
       <ul class="mt-6">
         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer flex items-center">
-          <span class="mr-2">📊</span> Dashboard
+          <a href="index.html" class="flex items-center w-full"><span class="mr-2">📊</span> Dashboard</a>
         </li>
         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer flex items-center">
-          <span class="mr-2">📚</span> Courses
+          <a href="courses.html" class="flex items-center w-full"><span class="mr-2">📚</span> Courses</a>
         </li>
         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer flex items-center">
-          <span class="mr-2">📝</span> Quizzes
+          <a href="quizzes.html" class="flex items-center w-full"><span class="mr-2">📝</span> Quizzes</a>
         </li>
         <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer flex items-center">
-          <span class="mr-2">👤</span> Profile
+          <a href="profile.html" class="flex items-center w-full"><span class="mr-2">👤</span> Profile</a>
         </li>
       </ul>
     </div>
-
     <!-- Main Content -->
-    <div class="content">
-      <div class="flex justify-between items-center mb-4">
+    <div class="content flex-1 ml-0 md:ml-64 p-4 transition-all duration-200">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-4 gap-4">
         <h1 class="text-2xl font-bold">Welcome to the LMSI</h1>
         <div>
           <input type="text" placeholder="Enter ID" class="p-2 border rounded-l">
@@ -71,11 +76,10 @@
         </div>
       </div>
       <p class="mb-4">Here will be an AI chatbot and ML recommendations.</p>
-
       <!-- Student Progress -->
       <div class="bg-white p-4 rounded shadow-md mb-4">
         <h2 class="text-lg font-semibold mb-2">Student Progress</h2>
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <p>Video Completion <span class="text-blue-500">78%</span></p>
             <div class="progress-bar mt-1">
@@ -102,7 +106,6 @@
           </div>
         </div>
       </div>
-
       <!-- Recommended Actions -->
       <div class="bg-white p-4 rounded shadow-md mb-4">
         <h2 class="text-lg font-semibold mb-2">Recommended Actions</h2>
@@ -112,7 +115,6 @@
           <li>Participate: Course Discussion</li>
         </ul>
       </div>
-
       <!-- Chat Window -->
       <div class="bg-white p-4 rounded shadow-md">
         <h2 class="text-lg font-semibold mb-2">Chat with AI</h2>
