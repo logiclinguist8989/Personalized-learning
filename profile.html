@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - LMS</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      width: 250px;
+      background-color: #f8f9fa;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="flex min-h-screen">
+    <!-- Sidebar (responsive) -->
+    <input type="checkbox" id="sidebar-toggle" class="hidden peer" />
+    <label for="sidebar-toggle" class="fixed top-4 left-4 z-30 bg-white rounded-md shadow-md p-2 cursor-pointer md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </label>
+    <div class="sidebar fixed z-20 top-0 left-0 h-full w-64 bg-gray-100 shadow-md transform -translate-x-full peer-checked:translate-x-0 transition-transform duration-200 md:translate-x-0 md:static md:w-64">
+      <div class="p-4">
+        <h2 class="text-xl font-bold flex items-center">
+          <span class="mr-2">🎓</span> LMS
+        </h2>
+      </div>
+      <ul class="mt-6">
+        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer flex items-center">
+          <a href="index.html" class="flex items-center w-full"><span class="mr-2">📊</span> Dashboard</a>
+        </li>
+        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer flex items-center">
+          <a href="courses.html" class="flex items-center w-full"><span class="mr-2">📚</span> Courses</a>
+        </li>
+        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer flex items-center">
+          <a href="quizzes.html" class="flex items-center w-full"><span class="mr-2">📝</span> Quizzes</a>
+        </li>
+        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer flex items-center">
+          <a href="profile.html" class="flex items-center w-full"><span class="mr-2">👤</span> Profile</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Main Content -->
+    <div class="content flex-1 ml-0 md:ml-64 p-4 transition-all duration-200">
+      <h1 class="text-2xl font-bold mb-4">Profile</h1>
+      <div class="bg-white p-4 rounded shadow-md mb-4">
+        <h2 class="text-lg font-semibold mb-2">Student Information</h2>
+        <ul class="list-disc pl-5">
+          <li>Name: John Doe</li>
+          <li>Email: johndoe@example.com</li>
+          <li>Enrolled Courses: 3</li>
+        </ul>
+      </div>
+      <div class="bg-white p-4 rounded shadow-md">
+        <h2 class="text-lg font-semibold mb-2">Profile Actions</h2>
+        <ul class="list-disc pl-5">
+          <li>Edit profile</li>
+          <li>Change password</li>
+          <li>Logout</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 
